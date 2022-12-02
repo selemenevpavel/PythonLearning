@@ -81,8 +81,21 @@
 # По данному целому числу N распечатайте все квадраты натуральных чисел, не
 # превосходящие N, в порядке возрастания.
 
+# n = int(input('Vvedite chislo '))
+# i = 1
+# while i**2 < n:
+#     print(i*i)
+#     i +=1
+
+
+# Определите среднее значение всех элементов последовательности,
+# завершающейся числом 0
+
 n = int(input('Vvedite chislo '))
-i = 0
-while i**2 < n:
-    print(i*i)
-    i +=1
+sum = 0
+count = 0
+while n != 0:
+    sum += n
+    count += 1
+    n = int(input('Vvedite chislo '))
+print(sum / count)
