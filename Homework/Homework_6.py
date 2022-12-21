@@ -4,6 +4,22 @@
 # делитель для списка натуральных чисел. Ввод чисел продолжается до ввода пустой
 # строки.
 
+# from functools import reduce
+
+
+# def gcd(a, b):
+#     return gcd(b, a % b) if b else a
+
+
+# n = int(input('Задайте количество элементов в списке: '))
+# sp = []
+# for i in range(n):
+#     a = int(input(f'Введите {i+1} число списка: '))
+#     sp.append(a)
+
+# print('Полученный список', sp)
+# print('НОД заданного списка: ', reduce(gcd, sp))
+
 
 # Дана строка текста, состоящая из букв русского алфавита "О" и "Р". Буква "О" –
 # соответствует выпадению Орла, а буква "Р" – соответствует выпадению Решки. Напишите
@@ -16,6 +32,49 @@
 # Примечание. Если выпавших Решек нет, то необходимо вывести число 0
 
 
+# text = input('Текст для кодирования: ')
+
+
+# def char_counter(text):
+#     encoded_string = ''
+#     count = 1
+#     char = text[0]
+#     for i in range(1, len(text)):
+#         if text[i] == 'Р':
+#             count += 1
+#         else:
+#             encoded_string = encoded_string + str(count)
+#             char = text[i]
+#             count = 0
+#             encoded_string = encoded_string + str(count)
+#     return count
+
+
+# print(char_counter(text))
+
+
 # Измените код одной-двух решенных ранее задач (с прошлых семинаров
 # или домашних работ), применив лямбды, filter, map, zip, enumerate,
 # списочные выражения.
+
+# 1. Напишите программу, которая принимает на вход вещественное число и показывает сумму его цифр
+
+# n = input('Введите вещественное число: ')
+# sum = sum(map(int, n.replace('.', '')))
+# print (sum)
+
+# 2. Напишите программу, которая принимает на вход число N и выдает набор произведений чисел от 1 до N.
+
+# from math import factorial
+# n = int(input('Введите число: '))
+# print(list(map(lambda x: ((x == 1) and 1) or x * factorial(x -1),list(range(1,n+1)))))
+
+
+# 3. Напишите программу, которая найдёт произведение пар чисел списка.
+# Парой считаем первый и последний элемент, второй и предпоследний и т.д.
+
+import math
+list_a = list(map(int, input('Введите числа через пробел: ').split()))
+print('Исходный список: ', list_a)
+print('Результат: ', list(
+    [a*b for a, b in zip(list_a[0:math.ceil(len(list_a)/2)], list_a[::-1])]))
