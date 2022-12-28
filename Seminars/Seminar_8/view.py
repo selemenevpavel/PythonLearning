@@ -10,7 +10,7 @@ def add_menu():
     return man
 
 
-def delete_menu(number):
+def delete_menu():
     print('Введите номер записи для удаления: ')
     number = int(input())
     return number
