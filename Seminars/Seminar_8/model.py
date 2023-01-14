@@ -25,6 +25,10 @@ def delete_people_csv(number):
             writer = csv.writer(csvfile, delimiter=';')
             for row in sp:
                 writer.writerow(row)
+        with open('Seminars\Seminar_8\people.txt', 'w', encoding="utf8", newline='') as txtfile:
+            writer = writer(txtfile, delimiter=';')
+            for row in sp:
+                writer.writerow(row)
 
 
 def get_people_txt():
