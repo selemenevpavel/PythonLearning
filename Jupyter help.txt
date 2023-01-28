@@ -1,0 +1,1 @@
+jupyter notebook --notebook-dir D:   - команда для перехода на локальный диск D
